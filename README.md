@@ -1,17 +1,17 @@
-# DataAnalytics-Assessment
+# DataAnalytics SQL Solution
 
 ## Overview
-This repository contains SQL solutions to four data analytics assessment questions.
+This repository contains SQL solutions to four data analytics questions.
 
 
 ## Question-by-Question Approach
-###  Assessment_Q1 – Cross-Selling Opportunity
+###  Solution 1 – Cross-Selling Opportunity
 **Approach:**  
 - Joined the users_customuser, plans_plan and savings_savingsaccount tables to find users who have at least one funded savings plan (`is_regular_savings = 1`) and one funded investment plan (`is_a_fund = 1`).
 - Aggregated by user and sorted by total deposit amounts to prioritize high-value customers.
 
 
-### Assessment_Q2 – Transaction Frequency Segmentation
+### Solution 2 – Transaction Frequency Segmentation
 **Approach:**  
 Created a **subquery** that calculates the monthly transaction count per user using `YEAR()` and `MONTH()`.
 - The outer query then computes the average monthly transaction count per user.
@@ -19,14 +19,14 @@ Created a **subquery** that calculates the monthly transaction count per user us
 - Grouped the final output by frequency category, with a count of customers and their average transaction volumes.
 
 
-### Assessment_Q3 – Inactive Accounts Detection
+### Solution 3 – Inactive Accounts Detection
 **Approach:**  
 - Queried `plans_plan` and `savings_savingsaccount` to detect active accounts.
 - Used an `INNER JOIN` clause to filter out plans that had any transactions within the last year.
 - Calculated `last_transaction_date` and `inactivity_days` with `DATEDIFF()` for better context.
 
 
-### Assessment_Q4. – Customer Lifetime Value Estimation
+### Solution 4 – Customer Lifetime Value Estimation
 **Approach:**  
 - Calculated account tenure as the number of months since `date_joined` using `TIMESTAMPDIFF`.
 - Counted total transactions from `savings_savingsaccount`.
